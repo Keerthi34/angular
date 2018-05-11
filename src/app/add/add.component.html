@@ -1,0 +1,46 @@
+<!--<table>
+  <tr *ngFor ="let t of teachers">
+    <td>{{t.School_Id}}</td>
+    <td>{{t.Teacher_Id}}</td>
+    <td>{{t.First_Name}}</td>
+    <td>{{t.Last_Name}}</td>
+    <td>{{t.Date_of_birth}}</td>
+    <td>{{t.Age}}</td>
+    <td>{{t.Qualification}}</td>
+    <td>{{t.Package}}</td>
+    <td>{{t.Address}}</td>
+    <td>{{t.Phone_Number}}</td>
+    <td>{{t.Experience}}</td>
+  </tr>
+</table>-->
+
+
+
+  <div>
+    <select (change)="fetchTeacher($event.target.value)">
+    <option value=0>TEACHERS<option>
+      <option *ngFor ="let t of teachers" value="{{t.Teacher_Id}}" >
+        {{t.First_Name}}
+      </option>
+   </select>
+  <div>
+    <select (change)="fetchClass($event.target.value)">
+    <option value=0>Class<option>
+      <option *ngFor ="let c of S" value="{{c}" >
+        {{c}}
+      </option>
+   </select>
+  </div>
+<p>hii</p>
+
+
+  <table style="">
+    <tr>
+      <th>Student ID</th>
+      <th>Student Name</th>
+    </tr>
+   <tr ngFor= "stu in Students">
+      <td>{{stu.stid}}</td>
+      <td>{{stu.name}}</td>
+    </tr>
+</table>
