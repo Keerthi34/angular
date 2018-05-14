@@ -7,7 +7,7 @@ import { AddComponent } from './add/add.component';
 import { DeleteComponent } from './delete/delete.component';
 import { UpdateComponent } from './update/update.component';
 import { HttpModule } from '@angular/http';
-
+import { CommonModule} from '@angular/common'
 import { ClassComponent } from './class/class.component';
 
 //import {FormsModule} from @angular/forms;
@@ -26,6 +26,7 @@ import { ClassComponent } from './class/class.component';
   imports: [
     BrowserModule,
 HttpModule,
+CommonModule
     RouterModule.forRoot([
         {
            path: 'teacher',component: TeacherComponent

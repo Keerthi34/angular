@@ -16,7 +16,7 @@
 
 
 
-  <div>
+<div>
     <select (change)="fetchTeacher($event.target.value)">
     <option value=0>TEACHERS<option>
       <option *ngFor ="let t of teachers" value="{{t.Teacher_Id}}" >
@@ -26,21 +26,69 @@
   <div>
     <select (change)="fetchClass($event.target.value)">
     <option value=0>Class<option>
-      <option *ngFor ="let c of S" value="{{c}" >
+      <option *ngFor ="let c of S" value="{{c}}" >
         {{c}}
       </option>
    </select>
+
   </div>
+
+
+<button type="submit"  value="Submit">Submit</button>
+
+
 <p>hii</p>
 
+<!--<ul>
+  <li *ngFor= "let stu in Students">{{stu.stid}}</li>
+</ul>-->
 
   <table style="">
-    <tr>
+<thead>
+
       <th>Student ID</th>
-      <th>Student Name</th>
-    </tr>
-   <tr ngFor= "stu in Students">
-      <td>{{stu.stid}}</td>
-      <td>{{stu.name}}</td>
-    </tr>
+        <!-- <th>Student Name</th>
+     <th>Admission No</th>
+      <th>Last Name</th>
+      <th>Mother Name</th>
+      <th>Father Name</th>
+      <th>Phone Number</th>
+      <th>Mail Id</th>
+      <th>Class</th>
+    <th>Blood Group</th>
+    <th>Address</th>-->
+</thead>
+<tbody>
+<ul>
+  <li *ngFor="let st of stu" (click)="Student(st)">
+
+                                     <td>{{st.studentid}}</td>
+
+</li>
+  </ul>
+
+
+
+    <!--  <tr *ngFor="let st of stu">
+
+                                 <td>{{st.studentid}}</td>
+                                 <td>{{st.name}}</td>
+
+
+                                 <!--
+                                 <td>{{st.admissionnumber}}</td>
+                                 <td>{{st.lastname}}</td>
+                                 <td>{{st.mothername}}</td>
+                                 <td>{{st.fathername}}</td>
+                                 <td>{{st.phonenumber}}</td>
+                                 <td>{{st.mailid}}</td>
+                                 <td>{{st.class}}</td>
+                                 <td>{{st.bloogroup}}</td>
+                                 <td>{{st.address}}</td>
+
+
+                            </tr>
+                        </tbody>
+
 </table>
+-->

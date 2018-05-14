@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Response,Headers} from '@angular/http';
+import { CommonModule} from '@angular/common'
 //import 'rxjs/add/operator/map';
 
 @Component({
@@ -14,6 +15,8 @@ export class AddComponent implements OnInit {
   teachers=[];
   Class=[];
   S=[];
+  //one=[];
+  stu=[];
   //fetch classes using teacher dropdown
   fetchTeacher=function(pro)
   {
@@ -22,7 +25,7 @@ export class AddComponent implements OnInit {
       this.http.get("http://localhost:3004/class/"+pro).subscribe(
         (res:Response) =>{
         this.Class= res.json();
-      //  this.Section=res.json();
+      //this.Section=res.json();
         console.log(res.json())
 
        var data=this.Class;
@@ -44,16 +47,60 @@ export class AddComponent implements OnInit {
   /*  fetchSection=function(sec){
 
     }*/
-//Loading teacher data to dropdown
-  ngOnInit() {
-    this.http.get("http://localhost:3002/fetch").subscribe(
-      (res:Response) =>{
-      this.teachers=res.json();
-     console.log(this.teachers);
-      //console.log(this.Teacher_Id);
+
+fetch=function()
+{
+  this.http.get("http://localhost:3002/fetch").subscribe(
+    (res:Response) =>{
+    this.teachers=res.json();
+   console.log(this.teachers);
+    //console.log(this.Teacher_Id);
+  }
+)
+}
+
+
+    Student=function(){
+      //this.abc=[];
+    this.http.get("http://10.10.5.4:5000/getstudenttoclass").subscribe(
+    (res:Response)=>{
+    this.stu=res.json();
+    console.log(res.json());
+
+    //var data=this.one;
+    //for (var i in one)
+    //{console.log(data[i].stid);
+  //  this.stu.push(data[i].stid)
+    //}
     }
     )
+  }
 
+      /*Studentname=function(){
+        //this.abc=[];
+      this.http.get("http://10.10.5.4:5000/studentdetails").subscribe(
+      (res:Response)=>{
+      this.stu=res.json();
+      console.log(res.json());
+
+      //var data=this.one;
+      //for (var i in one)
+      //{console.log(data[i].stid);
+    //  this.stu.push(data[i].stid)
+      //}
+      }
+      )
+    }
+*/
+
+
+
+//Loading teacher data to dropdown
+  ngOnInit() {
+    /**/
+     this.fetch();
+   this.Student();
+   //this.Studentname();
  //this.fetchTeacher();
 }
 }

@@ -6,11 +6,11 @@ import { Http } from '@angular/http';
   styleUrls: ['./class.component.css']
 })
 export class ClassComponent implements OnInit {
-/*  classcomponent = "Enter to class component";
+ classcomponent = "Enter to class component";
 
   constructor(private http: Http) { }
   Class=[];
-  ngOnInit() {
+  classfunction=function(){
   this.http.get("http://localhost:3004/fetch").subscribe(
     (res:Response) =>{
   this.Class=res.json();
@@ -18,11 +18,10 @@ export class ClassComponent implements OnInit {
 
   }
 )
+}
+  ngOnInit() {
+    this.classfunction();
 
-
-}*/
-
-
-
+}
 
 }
