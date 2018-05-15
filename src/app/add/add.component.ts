@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Response,Headers} from '@angular/http';
-import { CommonModule} from '@angular/common'
+import { CommonModule} from '@angular/common';
+//import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 //import 'rxjs/add/operator/map';
 
 @Component({
+
   selector: 'app-add',
   templateUrl: './add.component.html',
-  styleUrls: ['./add.component.css']
+
+  styleUrls: ['./add.component.css'],
+
 })
 export class AddComponent implements OnInit {
 
@@ -44,9 +49,6 @@ export class AddComponent implements OnInit {
     fetchClass=function(cls){
 
     }
-  /*  fetchSection=function(sec){
-
-    }*/
 
 fetch=function()
 {
@@ -58,6 +60,14 @@ fetch=function()
   }
 )
 }
+
+/*yEvent(event) {
+  console.log(event);
+}*/
+onClickSubmit(data) {
+     //alert("Student id " + data.studentid); pop up message
+     this.Student();
+  }
 
 
     Student=function(){
@@ -93,12 +103,11 @@ fetch=function()
     }
 */
 
-
-
 //Loading teacher data to dropdown
   ngOnInit() {
-    /**/
+
      this.fetch();
+//     this.myEvent();
    this.Student();
    //this.Studentname();
  //this.fetchTeacher();

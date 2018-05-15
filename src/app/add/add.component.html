@@ -13,9 +13,6 @@
     <td>{{t.Experience}}</td>
   </tr>
 </table>-->
-
-
-
 <div>
     <select (change)="fetchTeacher($event.target.value)">
     <option value=0>TEACHERS<option>
@@ -23,7 +20,7 @@
         {{t.First_Name}}
       </option>
    </select>
-  <div>
+
     <select (change)="fetchClass($event.target.value)">
     <option value=0>Class<option>
       <option *ngFor ="let c of S" value="{{c}}" >
@@ -31,15 +28,15 @@
       </option>
    </select>
 
-  </div>
+  <form #f = "ngForm" (ngSubmit) = "onClickSubmit(f.value)" >
+     <input type = "submit" value = "submit">
+  </form>
+<!--<button  type="submit" click="Submit.click()" value="Submit">Submit</button>
 
-
-<button type="submit"  value="Submit">Submit</button>
-
-
+    <button (click)="myEvent($event)">Submit</button>
 <p>hii</p>
 
-<!--<ul>
+<ul>
   <li *ngFor= "let stu in Students">{{stu.stid}}</li>
 </ul>-->
 
@@ -60,12 +57,10 @@
 </thead>
 <tbody>
 <ul>
-  <li *ngFor="let st of stu" (click)="Student(st)">
-
-                                     <td>{{st.studentid}}</td>
-
+  <li *ngFor="let st of stu">
+                     <td>{{st.studentid}}</td>
 </li>
-  </ul>
+</ul>
 
 
 
@@ -75,7 +70,7 @@
                                  <td>{{st.name}}</td>
 
 
-                                 <!--
+
                                  <td>{{st.admissionnumber}}</td>
                                  <td>{{st.lastname}}</td>
                                  <td>{{st.mothername}}</td>
