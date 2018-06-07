@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, ActivatedRoute, Params} from '@angular/router';
+
+import {FormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { RouterModule} from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { AddComponent } from './add/add.component';
@@ -9,8 +12,11 @@ import { UpdateComponent } from './update/update.component';
 import { HttpModule } from '@angular/http';
 import { CommonModule} from '@angular/common';
 import { ClassComponent } from './class/class.component';
+import { CookieService } from 'angular2-cookie/core';
 
-import {FormsModule} from '@angular/forms';
+import { NewteacherComponent } from './newteacher/newteacher.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +27,13 @@ import {FormsModule} from '@angular/forms';
     DeleteComponent,
     UpdateComponent,
 
-    ClassComponent
+    ClassComponent,
+
+    NewteacherComponent,
+
+    CreateAccountComponent,
+
+    ChangePasswordComponent
 
   ],
   imports: [
@@ -45,11 +57,20 @@ CommonModule,
         {
           path:'class', component: ClassComponent
         },
+        {
+          path:'newteacher', component:NewteacherComponent
+        },
+        {
+          path:'createaccount', component:CreateAccountComponent
+        },
+        {
+          path:'changepassword/:id', component:ChangePasswordComponent
+        }
 
 
      ])
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

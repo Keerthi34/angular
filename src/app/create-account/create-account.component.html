@@ -1,0 +1,21 @@
+<div class="total ">
+<h2 >School Name </h2>
+</div>
+<form #f = "ngForm" (ngSubmit) = "onSubmit(f.value)" >
+<!--  Student_Id:<input type="text" name="Student_Id"  ngModel><br>-->
+  Name:<input type="text" name="Name"  ngModel><br>
+
+  <select name="Parent_type" ngModel>
+      <option value=option>ParentType<option>
+          <option value=Father>Father</option>
+              <option value=Mother>Mother</option>
+      <option value=Guardian>Guardian</option>
+     </select>
+
+Parent_Name:<input type="text" name="Parent_Name"  ngModel><br>
+  Phone_Number:<input type="text" name="Phone_Number"  ngModel><br>
+  Mailid:<input type="text" name="Mailid"  ngModel><br>
+
+
+  <button type="submit"name="submit">Submit</button>
+  </form>

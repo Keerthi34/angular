@@ -1,0 +1,42 @@
+Table displaying all teacher details from teacher API
+<!--<table>
+  <tr *ngFor ="let t of teachers">
+    <td>{{t.School_Id}}</td>
+    <td>{{t.Teacher_Id}}</td>
+    <td>{{t.First_Name}}</td>
+    <td>{{t.Last_Name}}</td>
+    <td>{{t.Date_of_birth}}</td>
+    <td>{{t.Age}}</td>
+    <td>{{t.Qualification}}</td>
+    <td>{{t.Package}}</td>
+    <td>{{t.Address}}</td>
+    <td>{{t.Phone_Number}}</td>
+    <td>{{t.Experience}}</td>
+  </tr>
+</table>-->
+
+
+Table displaying all student details from student API
+<!--  <tr *ngFor="let st of stu">
+
+                             <td>{{st.studentid}}</td>
+                             <td>{{st.name}}</td>
+
+
+
+                             <td>{{st.admissionnumber}}</td>
+                             <td>{{st.lastname}}</td>
+                             <td>{{st.mothername}}</td>
+                             <td>{{st.fathername}}</td>
+                             <td>{{st.phonenumber}}</td>
+                             <td>{{st.mailid}}</td>
+                             <td>{{st.class}}</td>
+                             <td>{{st.bloogroup}}</td>
+                             <td>{{st.address}}</td>
+
+
+                        </tr>
+                    </tbody>
+
+</table>
+-->

@@ -1,19 +1,5 @@
-<!--<table>
-  <tr *ngFor ="let t of teachers">
-    <td>{{t.School_Id}}</td>
-    <td>{{t.Teacher_Id}}</td>
-    <td>{{t.First_Name}}</td>
-    <td>{{t.Last_Name}}</td>
-    <td>{{t.Date_of_birth}}</td>
-    <td>{{t.Age}}</td>
-    <td>{{t.Qualification}}</td>
-    <td>{{t.Package}}</td>
-    <td>{{t.Address}}</td>
-    <td>{{t.Phone_Number}}</td>
-    <td>{{t.Experience}}</td>
-  </tr>
-</table>-->
-<div>
+
+
     <select (change)="fetchTeacher($event.target.value)">
     <option value=0>TEACHERS<option>
       <option *ngFor ="let t of teachers" value="{{t.Teacher_Id}}" >
@@ -30,6 +16,7 @@
 
   <form #f = "ngForm" (ngSubmit) = "onClickSubmit(f.value)" >
      <input type = "submit" value = "submit">
+
   </form>
 <!--<button  type="submit" click="Submit.click()" value="Submit">Submit</button>
 
@@ -39,7 +26,8 @@
 <ul>
   <li *ngFor= "let stu in Students">{{stu.stid}}</li>
 </ul>-->
-
+<button ng-click="Student()">Submit</button>
+<button type="button" label="Click"(click)="display('Student')"></button>
   <table style="">
 <thead>
 
@@ -56,34 +44,8 @@
     <th>Address</th>-->
 </thead>
 <tbody>
-<ul>
-  <li *ngFor="let st of stu">
-                     <td>{{st.studentid}}</td>
-</li>
-</ul>
-
-
-
-    <!--  <tr *ngFor="let st of stu">
-
-                                 <td>{{st.studentid}}</td>
-                                 <td>{{st.name}}</td>
-
-
-
-                                 <td>{{st.admissionnumber}}</td>
-                                 <td>{{st.lastname}}</td>
-                                 <td>{{st.mothername}}</td>
-                                 <td>{{st.fathername}}</td>
-                                 <td>{{st.phonenumber}}</td>
-                                 <td>{{st.mailid}}</td>
-                                 <td>{{st.class}}</td>
-                                 <td>{{st.bloogroup}}</td>
-                                 <td>{{st.address}}</td>
-
-
-                            </tr>
-                        </tbody>
-
-</table>
--->
+  <ul>
+    <li *ngFor="let st of stu">
+                       <td>{{st.studentid}}</td>
+  </li>
+  </ul>

@@ -20,8 +20,8 @@ export class AddComponent implements OnInit {
   teachers=[];
   Class=[];
   S=[];
-  //one=[];
   stu=[];
+
   //fetch classes using teacher dropdown
   fetchTeacher=function(pro)
   {
@@ -61,31 +61,25 @@ fetch=function()
 )
 }
 
-/*yEvent(event) {
+/*myEvent(event) {
   console.log(event);
 }*/
-onClickSubmit(data) {
-     //alert("Student id " + data.studentid); pop up message
-     this.Student();
-  }
+
 
 
     Student=function(){
       //this.abc=[];
-    this.http.get("http://10.10.5.4:5000/getstudenttoclass").subscribe(
+    this.http.get("http:localhost:10.10.5.4:5000/getstudenttoclass").subscribe(
     (res:Response)=>{
     this.stu=res.json();
     console.log(res.json());
-
-    //var data=this.one;
-    //for (var i in one)
-    //{console.log(data[i].stid);
-  //  this.stu.push(data[i].stid)
-    //}
     }
     )
   }
 
+  onClickSubmit(data) {
+
+    }
       /*Studentname=function(){
         //this.abc=[];
       this.http.get("http://10.10.5.4:5000/studentdetails").subscribe(
@@ -106,9 +100,9 @@ onClickSubmit(data) {
 //Loading teacher data to dropdown
   ngOnInit() {
 
-     this.fetch();
+    this.fetch();
 //     this.myEvent();
-   this.Student();
+   //this.Student();
    //this.Studentname();
  //this.fetchTeacher();
 }
