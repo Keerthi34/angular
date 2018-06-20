@@ -1,0 +1,40 @@
+<p>
+  student-details works!
+</p>
+<form #f = "ngForm" (ngSubmit) = "onSubmit(f.value)"  >
+
+Student Id:<input type="text" name="stid"  ngModel><br>
+<button type="submit"name="submit">Submit</button>
+</form>
+
+
+
+
+<!--
+Student Id:<input type="text"
+
+  <button type="submit"name="submit" (click)="getProfile()">Submit</button>
+<br>
+<div *ngIf="found">
+  <span>{{stid}}'s stid is {{stid}}</span>
+    <span>{{class}}'s class is {{class}}</span>
+      <span>{{name}}'s name is {{name}}</span>
+        <span>{{fathername}}'s fathername is {{fathername}}</span>
+
+</div>
+
+Student Id:<input type="text" placeholder="{{stu.admissionnumber}}"name="admissionnumber" ngModel><br>
+Class:<input type="text" value="{{stu.class}}" name="class" disabled ngModel><br>
+Father Name:<input type="text" value="{{stu.fathername}}" name="fathername" disabled ngModel><br>
+Student Name:<input type="text" value="{{stu.name}}" name="name" disabled  ngModel><br>
+Roll Number:<input type="text" value="{{stu.stid}}" name="stid"  ngModel><br>
+
+
+
+Name :<input type="text" (keyup)="onNameKeyUp($event)">
+<button (click)="getProfile()">Get Profile</button>
+<br>
+<div *ngIf="found">
+  <span>{{name}}'s age is {{age}}</span>
+</div>
+-->

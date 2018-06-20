@@ -13,7 +13,8 @@ export class NewteacherComponent implements OnInit {
   onSubmit=function(teacherdata)
   {
     var dat=JSON.stringify(teacherdata)
-    alert(dat)
+    //alert(dat)
+    alert("created")
     console.log(dat)
 
 var url="http://10.10.5.54:3002/add"

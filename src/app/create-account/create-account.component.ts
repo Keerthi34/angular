@@ -18,11 +18,12 @@ export class CreateAccountComponent implements OnInit {
     onClickSubmit(data) {
       }
 
-//post registration details 
+//post registration details
       onSubmit=function(account)
       {
         var dat=JSON.stringify(account)
         //alert(dat)
+        alert("created")
         console.log(dat)
 
       var url="http://10.10.5.54:4000/createaccount"

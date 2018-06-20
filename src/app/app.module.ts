@@ -17,6 +17,9 @@ import { CookieService } from 'angular2-cookie/core';
 import { NewteacherComponent } from './newteacher/newteacher.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { StudentDetailsFeePaymentComponent } from './student-details-fee-payment/student-details-fee-payment.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,13 +36,18 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 
     CreateAccountComponent,
 
-    ChangePasswordComponent
+    ChangePasswordComponent,
+
+    StudentDetailsFeePaymentComponent,
+
+    StudentDetailsComponent
 
   ],
   imports: [
     BrowserModule,
 HttpModule,
 CommonModule,
+  HttpClientModule,
      FormsModule,
     RouterModule.forRoot([
         {
@@ -65,8 +73,14 @@ CommonModule,
         },
         {
           path:'changepassword/:id', component:ChangePasswordComponent
-        }
+        },
+        {
+          path:'feedetails', component:StudentDetailsFeePaymentComponent
+        },
 
+        {
+          path:'details/:id', component:StudentDetailsComponent
+        }
 
      ])
   ],

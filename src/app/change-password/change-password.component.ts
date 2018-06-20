@@ -39,7 +39,7 @@ console.log(id)
 
   ngOnInit(){
 
-    //get user registration details
+    //get student details
   var id: string =this.route.snapshot.params.id;
 console.log(id)
 
