@@ -1,16 +1,21 @@
 <div class="total ">
 <h2 >School Name </h2>
 </div>
+<!--enter student id-->
  <label>Student Id:</label><input type="text" name="stid" id="stid" ngModel ><br><br>
 <button type="submit" name="submit" (click)="submit()">Payment</button><br><br><br><br>
 
+<!-- Student details-->
 <label>Student Id:</label><input type="text" name="stid" id="stid" value="{{stu.stid}}" ngModel ><br><br>
 <label>Class:</label><input type="text" name="class" id="class" value="{{stu.class}}" ngModel ><br><br>
 <label>Student Name:</label><input type="text" name="name" id="name" value="{{stu.name}}" ngModel ><br><br>
 <label>Father Name:</label><input type="text" name="fathername" id="fathername" value="{{stu.fathername}}" ngModel ><br>
 <br><br><br><br>
-      <label>Total Fee:</label><input type="text" name="Total_Fee" id="Total_Fee" value="{{d.Total_Fee}}" ngModel ><br><br>
-    <label>Fee Paid:</label><input type="text" name="Fee_Paid" id="Fee_Paid" value="{{d.Fee_Paid}}" ngModel ><br><br>
+
+
+
+<label>Total Fee:</label><input type="text" name="Total_Fee" id="Total_Fee" value="{{d.Total_Fee}}" ngModel ><br><br>
+<label>Fee Paid:</label><input type="text" name="Fee_Paid" id="Fee_Paid" value="{{d.Fee_Paid}}" ngModel ><br><br>
 <label>Pending Fee:</label><input type="text" name="Pending_Fee" id="Pending_Fee" value="{{d.Pending_Fee}}" ngModel ><br>
 <br><br><br><br>
 
@@ -18,6 +23,9 @@
 
 <!-- Payment -->
  <label>Amount:</label><input type="text" name="Amount" id="Amount" ngModel ><br><br>
+
+ <label>Term:</label><input type="text" name="Term" id="Term" ngModel ><br><br>
+
  <label>Payment Mode</label>
     <label>  <input type="checkbox" value="cash" name="payment"id="Payment_Mode" ngModel>  Cash</label>
 
@@ -28,5 +36,6 @@
             <input id="date" name="date" [(ngModel)]="date"
             type="date" class="form-control">
           </div><br><br>
+
+<label>Pending Fee:</label><input type="text" name="pending fee" id="pay" ngModel ><br><br>
 <button type="submit" name="submit" (click)="onSubmit()" >Payment</button><br><br>
-<!--  <button type="submit" name="submit" (click)="sumPayments()">Total fee paid</button><br><br>-->

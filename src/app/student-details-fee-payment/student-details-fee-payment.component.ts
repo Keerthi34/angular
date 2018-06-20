@@ -12,7 +12,10 @@ export class StudentDetailsFeePaymentComponent implements OnInit {
 student=[]
 stu=[]
 details=[]
-d=[]
+d=[];
+e=[];
+det=[]
+det2=[]
 
   constructor(private route: ActivatedRoute,private http: Http, private httpClient:HttpClient) { }
 
@@ -29,22 +32,16 @@ this.http.get(url,id).subscribe (
   (res:Response) =>{console.log(url)
 this.student= res.json();
 console.log(this.stu=this.student[0])
-
-  //  console.log(this.stu)
-
 }  )
 
- //var id = document.getElementById("Student_Id").value;
 
   var url="http://10.10.5.54:3010/findbystudentid"+"/"+id
   this.http.get(url,id).subscribe (
     (res:Response) =>{console.log(url)
   this.details= res.json();
+  console.log(this.e=this.details[0].Total_Fee)
   console.log(this.d=this.details[0])
-
-
   }  )
-
 }
 
 
@@ -52,15 +49,16 @@ onSubmit=function(data)
 {
   var dat=JSON.stringify(data)
 alert("saved")
- var id = (<HTMLInputElement>document.getElementById("stid")).value;
+var id = (<HTMLInputElement>document.getElementById("stid")).value;
 var Amount = (<HTMLInputElement>document.getElementById("Amount")).value;
 var PaymentMode = (<HTMLInputElement>document.getElementById("Payment_Mode")).value;
+var Term = (<HTMLInputElement>document.getElementById("Term")).value;
 var date = (<HTMLInputElement>document.getElementById("date")).value;
 
- var a ={Student_Id:id,Amount:Amount,Payment_Mode:PaymentMode,date:date}
+ var a ={Student_Id:id,Amount:Amount,Payment_Mode:PaymentMode,Term:Term,date:date}
  console.log("daata "+JSON.stringify(a))
-
-
+var pay=this.e-Amount;
+console.log(pay)
 var url="http://10.10.5.54:3012/transaction"+"/"+id
 
 this.http.post(url,a).toPromise()
@@ -68,12 +66,10 @@ this.http.post(url,a).toPromise()
     .then(data => { return data; });
 }
 
-/*remainingFee(){}*/
 
-// calculate a sum of all payoffs
-/*sumPayments() {
-  return this.onSubmit.a.reduce((sum, val) => sum + val.amount, 0);
-}*/
+
+
+
 
   ngOnInit() {
 
