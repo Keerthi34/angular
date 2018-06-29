@@ -3,8 +3,9 @@
 </div>
 <form #f = "ngForm" (ngSubmit) = "onSubmit(f.value)" >
 <!--  Student_Id:<input type="text" name="Student_Id"  ngModel><br>-->
-  Student Name:<input type="text" name="Name"  ngModel><br><br>
+  Student Name:<input type="text" name="name"  ngModel><br><br>
 
+Class:<input type="text" name="class"  ngModel><br><br>
 <label>Parent Type
   <select name="Parent_type" ngModel>
       <option value=option>ParentType<option>
@@ -13,9 +14,15 @@
       <option value=Guardian>Guardian</option>
      </select>
 </label><br><br>
-Parent Name:<input type="text" name="Parent_Name"  ngModel><br><br>
-  Phone Number:<input type="text" name="Phone_Number"  ngModel><br><br>
-  Mailid:<input type="text" name="Mailid"  ngModel><br><br>
+Parent Name:<input type="text" name="guardianname"  ngModel><br><br>
+
+
+
+Blood Group:<input type="text" name="bloogroup"  ngModel><br><br>
+Address:<input type="text" name="address"  ngModel><br><br>
+
+  Phone Number:<input type="text" name="phonenumber"  ngModel><br><br>
+  Mail id:<input type="text" name="mailid"  ngModel><br><br>
 
 
   <button type="submit"name="submit">Submit</button>

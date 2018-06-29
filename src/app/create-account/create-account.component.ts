@@ -11,8 +11,6 @@ import { CookieService } from 'angular2-cookie/core';
 })
 export class CreateAccountComponent implements OnInit {
 
-
-
   constructor(private activatedRoute: ActivatedRoute,private http: Http,private _cookieService:CookieService) {
     }
     onClickSubmit(data) {
@@ -26,7 +24,7 @@ export class CreateAccountComponent implements OnInit {
         alert("created")
         console.log(dat)
 
-      var url="http://10.10.5.54:4000/createaccount"
+      var url="http://10.10.5.54:4000/post"
       this.http.post(url,account).toPromise()
           .then(res => console.log(account,<any[]> res.json()))
           .then(data => { return data; });

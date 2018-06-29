@@ -20,13 +20,15 @@ user=[];
 
     if(pwd.New_Password==pwd.Confirm_Password){
     var dat=JSON.stringify(pwd)
-    console.log(dat)
-var a={"Id":this.user.Student_Id,"Password":pwd.Confirm_Password}
-console.log(a)
+    //console.log(dat)
+var a={"Id":this.user.stid,"Password":pwd.Confirm_Password, "type":this.user.type, "mailid":this.user.mailid}
+//console.log(a)
 var id =this.route.snapshot.params.id;
+//var type =this.route.snapshot.params.type;
 console.log(id)
   var url="http://10.10.5.54:4000/savepassword/"+id
   console.log(url)
+  console.log(a)
   this.http.post(url,a).toPromise()
       .then(res => console.log(pwd,<any[]> res.json()))
       .then(data => { return data; });

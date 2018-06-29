@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, ActivatedRoute, Params} from '@angular/router';
 
+
 import {FormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 
@@ -20,6 +21,9 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { StudentDetailsFeePaymentComponent } from './student-details-fee-payment/student-details-fee-payment.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import { HttpClientModule} from '@angular/common/http';
+import { TeacherpasswordComponent } from './teacherpassword/teacherpassword.component';
+import { AdminDetailsComponent } from './admin-details/admin-details.component';
+import { AdminPasswordComponent } from './admin-password/admin-password.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,13 @@ import { HttpClientModule} from '@angular/common/http';
 
     StudentDetailsFeePaymentComponent,
 
-    StudentDetailsComponent
+    StudentDetailsComponent,
+
+    TeacherpasswordComponent,
+
+    AdminDetailsComponent,
+
+    AdminPasswordComponent
 
   ],
   imports: [
@@ -75,11 +85,20 @@ CommonModule,
           path:'changepassword/:id', component:ChangePasswordComponent
         },
         {
+          path:'teacherpassword/:id', component:TeacherpasswordComponent
+        },
+        {
           path:'feedetails', component:StudentDetailsFeePaymentComponent
         },
 
         {
           path:'details/:id', component:StudentDetailsComponent
+        },
+        {
+          path:'admindetails', component:AdminDetailsComponent
+        },
+        {
+          path:'adminpassword/:id', component:AdminPasswordComponent
         }
 
      ])
